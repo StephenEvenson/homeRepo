@@ -1,8 +1,8 @@
 [TOC]
 
-## Learn git
+# Learn git
 
-### 初始化
+## 初始化
 ```bash
 git init #初始化库
 
@@ -13,7 +13,7 @@ git commit -m "add a file"
 git diff   //查看工作区和版本库最新内容的差别
 ```
 
-### 查看库和日志
+## 查看库和日志
 ```bash
 git status //查看仓库当前状态
 
@@ -22,7 +22,7 @@ git log --pretty=online
 git reflog //查看最近的命令
 ```
 
-### 回退、撤销
+## 回退、撤销
 ```bash
 git reset --hard HEAD^ //回退到上一版本
 git reset --hard <commit id> //回退到指定版本
@@ -35,7 +35,7 @@ git reset HEAD readme.txt //将暂存区的修改撤销，回到工作区
 
 
 
-### 删除文件
+## 删除文件
 
 ```bash
 // 1. 确认删除
@@ -49,9 +49,9 @@ git checkout -- test.txt
 
 
 
-### 远程仓库
+## 远程仓库
 
-####  将本地的homeRepo和GitHub上的StephenEvenson/homeRepo关联
+###  将本地的homeRepo和GitHub上的StephenEvenson/homeRepo关联
 
 ```bash
 git remote add origin git@github.com:StephenEvenson/homeRepo
@@ -60,7 +60,7 @@ git remote add origin git@github.com:StephenEvenson/homeRepo
 
 
 
-#### 第一次推送本地master
+### 第一次推送本地master
 
 ```bash
 git push -u origin master
@@ -86,14 +86,14 @@ git pull --rebase origin master
 
 
 
-#### 第二次开始推送
+### 第二次开始推送
 
 ```bash
 git push origin master
 
 ```
 
-#### 将远程仓库克隆到本地
+### 将远程仓库克隆到本地
 
 ```bash
 git clone git@github.com:StephenEvenson/gitskills.git
@@ -102,9 +102,9 @@ git clone git@github.com:StephenEvenson/gitskills.git
 
 
 
-### 分支
+## 分支
 
-#### 创建分支
+### 创建分支
 
 ```bash
 git checkout -b dev # -b表示创建并切换
@@ -119,7 +119,7 @@ git branch
 
 
 
-#### 合并分支
+### 合并分支
 
 ```bash
 git merge dev
@@ -133,7 +133,7 @@ git branch -D feature #使用-D强行删除未被合并的分支
 
 
 
-#### 解决冲突
+### 解决冲突
 
 当在master和其他分支下对同一文件有不同的修改时，就会出现分支合并冲突，git会在文件中标明冲突的内容
 
@@ -159,7 +159,7 @@ git branch -D feature #使用-D强行删除未被合并的分支
 
 
 
-#### 禁用Fast forward合并分支
+### 禁用Fast forward合并分支
 
 Fast forword在删除分支后会丢掉分支信息（无法在log中查看commit id），而禁用Fast forward则能在merge时生成新的commit，可以在分支历史上查看分支信息
 
@@ -170,7 +170,7 @@ git merge --no-ff -m "merge with no-ff" dev
 
 
 
-#### Bug 分支
+### Bug 分支
 
 ```bash
 git stash #先储藏工作现场
@@ -190,7 +190,7 @@ git stash pop #恢复工作内容并删除存储
 
 
 
-#### 远程库
+### 远程库
 
 ```bash
 git remote #显示远程库，默认名origin
@@ -204,7 +204,7 @@ git pull
 
 
 
-#### 多人协作流程
+### 多人协作流程
 
 1. 试图用`git push origin dev`推送自己的修改
 
@@ -218,7 +218,7 @@ git pull
 
 
 
-#### rebase
+### rebase
 
 将本地未push的分支提交历史整理成直线，查看历史提交变化时更容易
 
@@ -229,9 +229,9 @@ git rebase
 
 
 
-### 标签
+## 标签
 
-#### 创建标签
+### 创建标签
 
 ```bash
 git tag v1.0. #在对应分支打标签
@@ -244,7 +244,7 @@ git tag -a v1.0 -m "version 1.0 released" 03f64d9 #用-a指定标签名，-m指�
 
 
 
-#### 操作标签
+### 操作标签
 
 ```bash
 git tag -d v1.0 #删除标签
@@ -267,7 +267,7 @@ git push origin :refs/tag/v0.9  #再在远程库删除标签
 
 
 
-### 添加多个远程库
+## 添加多个远程库
 
 ```bash 
 git remote rm origin  #删除origin远程库
