@@ -1,3 +1,5 @@
+[TOC]
+
 ## Learn git
 
 ### 初始化
